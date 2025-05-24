@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct Movie_ExplorerApp: App {
+struct MovieExplorerApp: App {
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environment(\ .managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
