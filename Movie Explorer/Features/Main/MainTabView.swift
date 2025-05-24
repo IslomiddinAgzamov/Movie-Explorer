@@ -17,7 +17,7 @@ struct MainTabView: View {
 
             FavoritesView()
                 .tabItem {
-                    Label("Favorites", systemImage: "archivebox")
+                    Label("Favorites", systemImage: "bookmark")
                 }
         }
     }

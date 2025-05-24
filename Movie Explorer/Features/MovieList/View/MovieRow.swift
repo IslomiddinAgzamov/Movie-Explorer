@@ -20,15 +20,20 @@ struct MovieRow: View {
             }
             .frame(width: 80, height: 120)
             .clipped()
+            
             VStack(alignment: .leading) {
                 Text(movie.title)
                     .font(.headline)
+                
                 Text("Rating: \(movie.rating, specifier: "%.1f")")
+                
                 if isFavorite {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "bookmark.fill")
                         .foregroundStyle(.yellow)
+                        .padding(.top, 6)
                 }
             }
+            
             Spacer()
         }
     }

@@ -19,11 +19,13 @@ struct MovieDetailView: View {
                 } placeholder: {
                     Rectangle().fill(Color.gray)
                 }
+                
                 Text(movie.title).font(.title)
                 Text("Release Date: \(movie.releaseDate)")
                 Text("Rating: \(movie.rating, specifier: "%.1f")")
                 Text(movie.overview)
-            }.padding()
+            }
+            .padding()
         }
         .navigationTitle(movie.title)
         .navigationBarTitleDisplayMode(.inline)
@@ -32,7 +34,7 @@ struct MovieDetailView: View {
                 Button(action: {
                     favoritesManager.toggle(movie: movie)
                 }) {
-                    Image(systemName: favoritesManager.isFavorite(movie: movie) ? "star.fill" : "star")
+                    Image(systemName: favoritesManager.isFavorite(movie: movie) ? "bookmark.fill" : "bookmark")
                         .foregroundStyle(.yellow)
                 }
             }
