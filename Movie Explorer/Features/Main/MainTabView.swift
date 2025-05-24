@@ -9,12 +9,16 @@ import SwiftUI
 
 struct MainTabView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            MovieListView()
+                .tabItem {
+                    Label("Movies", systemImage: "film")
+                }
+
+            FavoritesView()
+                .tabItem {
+                    Label("Favorites", systemImage: "archivebox")
+                }
         }
-        .padding()
     }
 }
